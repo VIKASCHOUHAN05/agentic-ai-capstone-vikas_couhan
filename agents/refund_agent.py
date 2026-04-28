@@ -5,7 +5,7 @@ from observability.tracer import trace, end_trace
 
 def refund_agent(state):
 
-    start = trace("Refund Agent")
+    start, trace_data = trace("Refund Agent")
 
     amount = calculate_refund()
 
@@ -35,6 +35,6 @@ def refund_agent(state):
 
     state["current_agent"] = "refund"
 
-    end_trace(start)
+    end_trace(start, trace_data)
 
     return state

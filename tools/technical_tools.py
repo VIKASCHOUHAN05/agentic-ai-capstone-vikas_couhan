@@ -9,5 +9,4 @@ def check_service_status():
 
 
 def create_ticket():
-
-    return "Ticket created: TCK123"
+    return "Ticket created: TCK123. Contact support at 9876543210"

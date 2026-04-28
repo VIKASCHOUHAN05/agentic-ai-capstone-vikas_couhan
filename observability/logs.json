@@ -1,0 +1,23 @@
+[
+  {
+    "agent": "Technical Agent",
+    "timestamp": 1777375598.9214725,
+    "latency": 0.0,
+    "tokens": 0,
+    "cost": 0
+  },
+  {
+    "agent": "Technical Agent",
+    "timestamp": 1777376220.2240422,
+    "latency": 0.0,
+    "tokens": 0,
+    "cost": 0
+  },
+  {
+    "agent": "Technical Agent",
+    "timestamp": 1777377073.8095136,
+    "latency": 0.0,
+    "tokens": 0,
+    "cost": 0
+  }
+]

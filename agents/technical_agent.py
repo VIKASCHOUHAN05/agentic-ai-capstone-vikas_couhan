@@ -4,7 +4,7 @@ from observability.tracer import trace, end_trace
 
 def technical_agent(state):
 
-    start = trace("Technical Agent")
+    start, trace_data = trace("Technical Agent")
 
     ticket = create_ticket()
 
@@ -19,6 +19,6 @@ def technical_agent(state):
 
     state["current_agent"] = "technical"
 
-    end_trace(start)
+    end_trace(start, trace_data)
 
     return state

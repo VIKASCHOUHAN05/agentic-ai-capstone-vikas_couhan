@@ -5,15 +5,50 @@ def triage_agent(state):
 
 def route_query(state):
 
-    message = state["messages"][-1]["content"].lower()
+    text = state["messages"][-1]["content"].lower()
 
-    if "invoice" in message:
-        return "billing"
+    refund_keywords = [
+        "refund",
+        "money back",
+        "return",
+        "cancel",
+        "refund request",
+        "refund please"
+    ]
 
-    if "refund" in message:
+    billing_keywords = [
+        "invoice",
+        "billing",
+        "payment",
+        "statement",
+        "charge",
+        "payment history",
+        "update payment",
+        "billing question"
+    ]
+
+    technical_keywords = [
+        "internet",
+        "wifi",
+        "network",
+        "connection",
+        "error",
+        "slow",
+        "down",
+        "not working",
+        "issue"
+    ]
+
+    # Priority order matters
+
+    if any(k in text for k in refund_keywords):
         return "refund"
 
-    if "error" in message:
+    if any(k in text for k in billing_keywords):
+        return "billing"
+
+    if any(k in text for k in technical_keywords):
         return "technical"
 
+    # fallback
     return "technical"

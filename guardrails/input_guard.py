@@ -1,11 +1,19 @@
-def check_input(message):
+BLOCKED_PATTERNS = [
+    "ignore instructions",
+    "system prompt",
+    "bypass",
+    "hack",
+]
 
-    blocked = ["ignore instructions", "system prompt"]
 
-    for word in blocked:
+def validate_input(message):
 
-        if word in message.lower():
+    text = message.lower()
 
-            return False
+    for pattern in BLOCKED_PATTERNS:
 
-    return True
+        if pattern in text:
+
+            return False, pattern
+
+    return True, None

@@ -7,6 +7,10 @@ from agents.billing_agent import billing_agent
 from agents.technical_agent import technical_agent
 from agents.refund_agent import refund_agent
 
+from guardrails.middleware import (
+    run_input_guardrails,
+    run_output_guardrails
+)
 
 workflow = StateGraph(CustomerSupportState)
 
@@ -67,14 +71,33 @@ def run_cli():
 
         user_input = input("\nUser: ")
 
-        state["messages"].append({
-
+        message = {
             "role": "user",
             "content": user_input
+        }
 
-        })
+        state["messages"].append(message)
+
+        # INPUT GUARDRAIL
+
+        state, allowed = run_input_guardrails(state)
+
+        if not allowed:
+
+            print(
+                "Assistant:",
+                state["messages"][-1]["content"]
+            )
+
+            continue
+
+        # RUN GRAPH
 
         state = app.invoke(state)
+
+        # OUTPUT GUARDRAIL
+
+        state = run_output_guardrails(state)
 
         print(
             "Assistant:",

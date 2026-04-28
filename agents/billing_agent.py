@@ -7,7 +7,7 @@ from observability.tracer import trace, end_trace
 
 def billing_agent(state):
 
-    start = trace("Billing Agent")
+    start, trace_data = trace("Billing Agent")
 
     customer_id = state["customer_id"]
 
@@ -22,6 +22,6 @@ def billing_agent(state):
 
     state["current_agent"] = "billing"
 
-    end_trace(start)
+    end_trace(start, trace_data)
 
     return state

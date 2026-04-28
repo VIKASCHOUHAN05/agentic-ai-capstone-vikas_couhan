@@ -1,0 +1,82 @@
+[
+  {
+    "input": "show my invoice",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "I need refund",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "my internet is not working",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "payment history",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "refund my order",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "wifi issue",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "update payment method",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "cancel order refund",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "service down",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "billing statement",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "money back",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "network problem",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "invoice details",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "return product",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "connection error",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "billing question",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "refund request",
+    "expected_agent": "refund"
+  },
+  {
+    "input": "internet slow",
+    "expected_agent": "technical"
+  },
+  {
+    "input": "charge dispute",
+    "expected_agent": "billing"
+  },
+  {
+    "input": "refund please",
+    "expected_agent": "refund"
+  }
+]
