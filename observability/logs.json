@@ -19,5 +19,26 @@
     "latency": 0.0,
     "tokens": 0,
     "cost": 0
+  },
+  {
+    "agent": "Billing Agent",
+    "timestamp": 1777447116.18544,
+    "latency": 0.0,
+    "tokens": 0,
+    "cost": 0
+  },
+  {
+    "agent": "Refund Agent",
+    "timestamp": 1777447165.0649009,
+    "latency": 6.46,
+    "tokens": 0,
+    "cost": 0
+  },
+  {
+    "agent": "Technical Agent",
+    "timestamp": 1777447183.8896463,
+    "latency": 0.0,
+    "tokens": 0,
+    "cost": 0
   }
 ]
